@@ -1,0 +1,98 @@
+@import "tailwindcss" source("../");
+
+@theme {
+  --color-ink: #100e0b;
+  --color-ink-2: #17140f;
+  --color-ink-3: #201c15;
+  --color-line: #322c22;
+  --color-ivory: #f3ece0;
+  --color-ivory-dim: #b6ae9f;
+  --color-ivory-faint: #7d766a;
+  --color-brass: #c2a05e;
+  --color-brass-deep: #8e723c;
+  --color-clay: #b0553c;
+
+  --font-display: "Bodoni Moda", "Didot", Georgia, serif;
+  --font-sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-ink);
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-ink);
+    color: var(--color-ivory);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-brass);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 1px solid var(--color-brass);
+    outline-offset: 3px;
+  }
+}
+
+@utility display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+}
+
+/* Editorial italic emphasis inside oversized headings. */
+@utility accent-em {
+  font-style: italic;
+  color: var(--color-brass);
+  font-weight: 400;
+}
+
+@utility eyebrow {
+  font-size: 0.6875rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-ivory-faint);
+  font-weight: 500;
+}
+
+/* Hairline grid that sits under the page and gives the dark field some texture. */
+@utility field-grain {
+  background-image:
+    linear-gradient(to right, rgba(194, 160, 94, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(194, 160, 94, 0.055) 1px, transparent 1px);
+  background-size: 96px 96px;
+}
+
+@keyframes drift {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.marquee-track {
+  animation: drift 42s linear infinite;
+  will-change: transform;
+}
+
+.rise {
+  animation: rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+  .rise { animation: none; opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}
