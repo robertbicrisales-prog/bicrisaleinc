@@ -1,0 +1,1 @@
+ALTER TABLE "payment_checkouts" ADD COLUMN "vault_customer_id" text;

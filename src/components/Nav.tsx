@@ -47,7 +47,7 @@ export function Nav() {
         <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-5 sm:px-10">
           <Wordmark />
 
-          <nav className="hidden items-center gap-7 lg:flex">
+          <nav className="hidden items-center gap-7 xl:flex">
             {nav.map((item) => {
               const active = pathname === item.to
               return (
@@ -79,7 +79,7 @@ export function Nav() {
               onClick={() => setOpen((v) => !v)}
               aria-expanded={open}
               aria-label="Toggle menu"
-              className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 border border-line lg:hidden"
+              className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 border border-line xl:hidden"
             >
               <span
                 className={`h-px w-4 bg-ivory transition-transform duration-300 ${
@@ -98,7 +98,7 @@ export function Nav() {
 
       {/* Mobile sheet */}
       <div
-        className={`fixed inset-x-0 top-[73px] z-40 origin-top border-b border-line bg-ink/98 backdrop-blur-xl transition-all duration-400 lg:hidden ${
+        className={`fixed inset-x-0 top-[73px] z-40 origin-top border-b border-line bg-ink/98 backdrop-blur-xl transition-all duration-400 xl:hidden ${
           open
             ? 'pointer-events-auto scale-y-100 opacity-100'
             : 'pointer-events-none scale-y-95 opacity-0'
