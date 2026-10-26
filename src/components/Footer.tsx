@@ -27,6 +27,7 @@ const columns = [
     links: [
       { label: 'Portfolio', to: '/portfolio' },
       { label: 'Packages & Pricing', to: '/packages' },
+      { label: 'Make a Payment', to: '/payments' },
       { label: 'Our Process', to: '/process' },
       { label: 'About', to: '/about' },
       { label: 'Contact', to: '/contact' },

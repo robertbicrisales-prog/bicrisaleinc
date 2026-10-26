@@ -16,13 +16,6 @@ export const site = {
   instagramHandle: '@bicrisale',
   description:
     'Bicrisale is a creative growth agency. We build brands from the ground up — strategy, identity, content, and the systems that keep them growing.',
-  /**
-   * PayPal business account that receives package deposits. Override in Netlify
-   * with the VITE_PAYPAL_BUSINESS env var; the fallback keeps the buttons
-   * rendering (and sandbox-safe) until the real account is connected.
-   */
-  paypalBusiness:
-    import.meta.env.VITE_PAYPAL_BUSINESS || 'billing@bicrisale.com',
   currency: 'USD',
 }
 
@@ -30,6 +23,7 @@ export const nav = [
   { label: 'Services', to: '/services' },
   { label: 'Portfolio', to: '/portfolio' },
   { label: 'Packages', to: '/packages' },
+  { label: 'Payments', to: '/payments' },
   { label: 'Industries', to: '/industries' },
   { label: 'Process', to: '/process' },
   { label: 'Studio', to: '/content-studio' },
